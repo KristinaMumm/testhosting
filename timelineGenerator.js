@@ -39,6 +39,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 //Pack or unpack events
     changePackUnpackStyleFirstTime()
+
+    window.document.getElementById("timelineIframe").style.height = window.document.getElementsByClassName("timeline")[0].scrollHeight + 'px'
 });
 
 
@@ -152,7 +154,6 @@ function changePackUnpackStyle(packDiv, contentDiv, className = packDiv.classNam
         packDiv.textContent = '\u21D3'
         packDiv.className = 'unpack'
 
-
         for (let child of contentDiv.children) {
             if (child.tagName === 'IMG' ||
                 (child.firstElementChild !== null && (child.firstElementChild.tagName === 'IMG'
@@ -184,7 +185,7 @@ function changePackUnpackStyle(packDiv, contentDiv, className = packDiv.classNam
         packDiv.className = 'pack'
 
         for (let child of contentDiv.children) {
-
+            console.log(child.tagName)
             if (child.tagName === 'IMG' ||
                 (child.firstElementChild !== null && (child.firstElementChild.tagName === 'IMG'
                     || child.firstElementChild.className === 'timelineModal')) || child.tagName === 'BR') {
