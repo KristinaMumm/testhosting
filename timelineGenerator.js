@@ -42,6 +42,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     sendPostMessage()
 });
 
+//Resizing iframe
 window.onload = () => sendPostMessage();
 window.onresize = () => sendPostMessage();
 
@@ -140,6 +141,7 @@ function addPackUnpackAllButton() {
     let packDiv = document.createElement("button");
     packDiv.textContent = '\u21D1'
     packDiv.classList.add("pack")
+    packDiv.id = "packAll"
 
     packDiv.onclick = function () {
 
@@ -150,9 +152,11 @@ function addPackUnpackAllButton() {
         if (packDiv.className === 'pack') {
             packDiv.textContent = '\u21D3'
             packDiv.className = 'unpack'
+            packDiv.id = "unpackAll"
         } else if (packDiv.className === 'unpack') {
             packDiv.textContent = '\u21D1'
             packDiv.className = 'pack'
+            packDiv.id = "packAll"
         }
     }
 
