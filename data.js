@@ -1,0 +1,1 @@
+const data = {"labelType":"LINE","eventSpace":200,"readMore":"Loe rohkem...","events":[{"queueNr":1,"label":"","htmlContent":"<p style=\"font-family: 'Arial';\">Insert text here</p>","packed":false,"uuid":"573f0e47-e502-4db2-8d76-508253847bff"}]}
