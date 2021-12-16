@@ -39,11 +39,22 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 //Pack or unpack events
     changePackUnpackStyleFirstTime()
-    if (window.parent.document.getElementById("timelineIframe") !== null) {
-        window.parent.document.getElementById("timelineIframe").style.height = window.document.getElementsByClassName("timeline")[0].scrollHeight + 'px'
-    }
+    sendPostMessage()
 });
 
+window.onload = () => sendPostMessage();
+window.onresize = () => sendPostMessage();
+
+let heightTimeline = document.getElementsByClassName('timeline')[0].scrollHeight
+const sendPostMessage = () => {
+    if (heightTimeline !== document.getElementsByClassName('timeline')[0].scrollHeight) {
+        heightTimeline = document.getElementsByClassName('timeline')[0].scrollHeight;
+        window.parent.postMessage({
+            frameHeight: heightTimeline
+        }, '*');
+        console.log(heightTimeline)
+    }
+}
 
 
 
