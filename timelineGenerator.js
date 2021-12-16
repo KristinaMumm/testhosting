@@ -39,7 +39,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 //Pack or unpack events
     changePackUnpackStyleFirstTime()
-    window.parent.document.getElementById("timelineIframe").style.height = window.document.getElementsByClassName("timeline")[0].scrollHeight + 'px'
+    if (window.parent.document.getElementById("timelineIframe") !== null) {
+        window.parent.document.getElementById("timelineIframe").style.height = window.document.getElementsByClassName("timeline")[0].scrollHeight + 'px'
+    }
 });
 
 
